@@ -1,0 +1,104 @@
+Ids Facturas
+
+  formAgregarFactura --> formulario para agregar factura
+  nombreFactura --> Nombre de la factura
+  importeFactura --> importe de la factura
+  estados --> Estado de la factura
+  fecha --> fecha de la factura
+  miembroFactura --> checkbox para las facturas de cliente miembro
+  añadirFactura --> boton para añadir factura
+  cancelarFactura --> boton para cancelar factura
+
+
+Ids Multas
+
+   agregarMulta --> formulario para agregar multas
+   nombreMulta --> Nombre de la multa
+   importeMulta --> Importe de la multa
+   fechaMulta --> Fecha de la multa
+   descripcionMulta --> Descripcion de la multa
+   alegacionesMulta --> alegaciones de la multa
+   añadirMulta --> boton añadir multa
+   cancelarMulta --> boton cancelar multa
+
+Ids Clientes
+
+    - Agregar Cliente
+
+        dniCliente --> dni del cliente
+        nombreCliente --> nombre del cliente
+        telefonoCliente --> telefono del cliente
+        emailCliente --> email del cliente
+        ClienteMiembro --> checkbox que indica si el cliente es miembro
+        fechaAltaCliente --> Si el cliente es miembro
+
+    - Seleccionar Cliente a Modificar
+
+        clienteAModificar --> select que selecciona al cliente
+        cancelarModificacion --> poner combo al reset
+
+    -  Modificar Cliente
+
+        dniClienteAModificar --> dni del cliente
+        nombreAModificar --> nombre del cliente
+        telfAModificar --> telefono del cliente
+        emailAModificar --> email del cliente
+        cancelarModificacionCliente --> resetear el formulario del cliente que se va a modificar
+        formClienteAModificar --> formulario del cliente que se va a modificar
+
+    - Baja Cliente
+
+        ClienteABaja --> select para elegir al cliete que se quiere dar de baja
+Ids Reclcamaciones
+
+    - Nueva Reclamacion
+
+        formNuevaReclamacion --> formulario de nueva reclamacion
+        nomReclamacion --> nombre de la reclamacion
+        estadoReclamacion --> select del estado de la reclamacion
+        clienteReclamacion --> select donde se elige al cliente de la reclamacion
+        abogadoReclamacion --> select donde se elige al abogado de la reclamacion
+        facturaReclamacion --> select donde se elige la factura de la reclamacion
+        multaReclamacion --> select donde se elige la multa que de la reclamacion
+        cancelarReclamacion --> boton cancelar del formulario
+
+    - Seguimiento de la Reclamacion
+
+          formSelecReclamacion --> formulario de seguimiento de la reclamacion
+          buscarReclamacion --> select donde se elige la Reclamacion que se desea
+          noVerReclamacion --> resetear el select.
+
+    - Actualizar Reclamacion
+
+           formReclamacionActualiza --> formulario de actualizar Reclamacion
+           reclamcionAmodificar --> select que escoge la reclamacion para modificar
+           estadoModificado --> select que escoge el estado de la reclamacion
+           darModificacion --> boton para aceptar la modificacion
+           noModificacion --> boton para cancelar la modificacion
+
+Ids Abogados
+
+    - Agregar Abogado
+
+            agregarAbogado --> formulario para agregar Abogado
+            dniAbogado --> dni del abogado
+            nombreAbogado --> nombre del abogado
+            sueldo --> sueldo abogado
+            btnAñadirAbogado --> boton añadir abogado
+            cancelarAbogado --> boton cancelar abogado
+
+    - Baja Abogado
+
+            formDarBajaAbogado --> formulario para dar baja de abogado
+            seleccionarAbogadoModif --> select para elegir abogados
+            darBajaAbogado -->  boton para dar de a un abogado
+            cancelarBajaAbogado --> boton para cancelar a un abogado
+
+    -   Modificar Sueldo
+
+             formModificarSueloAbogado --> formulario para modificar sueldo del abogado
+             seleccionarAbogado --> select abogado para modificar sueldo
+             sueldoModificado --> modificar los sueldo del abogados
+             btnModificarSueldoAbogado --> boton aceptar para modificar el sueldo del abogado
+             cancelarSueldo --> boton cancelar modificaicon de abogados
+

@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestoría de Multas</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+
+
+    <link rel="stylesheet" href="estilo.css">
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active" id="inicio"><a>Inicio</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                       Reclamacion <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li id="nuevaReclamacion"><a>Nueva Reclamacion</a></li>
+                        <li id="seguimineto"><a>Seguimiento</a></li>
+                        <li id="actualizacion"><a>Actualizacion de Reclamacion</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Cliente <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li id="nuevoCliente"><a>Nuevo Cliente</a></li>
+                        <li id="bajaCliente"><a>Baja Cliente</a></li>
+                        <li id="modificaCliente"><a>Modificar Cliente</a></li>
+                        <li id="historialCliente"><a>Historial</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    Abogados <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+
+                    <li id="nuevoAbogado"><a>Nuevo Abogado</a></li>
+                    <li id="bajaAbogado"><a>Baja Abogado</a></li>
+                    <li id="modificarSueldo"><a>Modificar Sueldo</a></li>
+                    <li id="historialAbogado"><a>Historial</a></li>
+
+                </ul>
+            </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Factura <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        <li id="emitirFactura"><a>Emitir Factura</a></li>
+                        <li id="historialFactura"><a>Historial</a></li>
+
+                    </ul>
+                </li>
+                <li class="active" id="mostrarMulta"><a>Multa</a></li>
+            </ul>
+        </div>
+
+    </nav>
+<div id="principal">
+    <h1>Gestion de Multas</h1>
+    <img src="cursiGitHub.jpg" alt="">
+</div>
+    <!--
+
+     FORMULARIOS DE CLIENTES
+
+    -->
+
+    <!-- Añadir Clientes-->
+
+
+    <div id="formAñadirCliente">
+
+        <form class="form-horizontal" id="agregarCliente" name="cliente">
+            <fieldset>
+
+                <legend>Agregar Cliente</legend>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">D.N.I</label>
+                    <div class="col-md-4">
+                        <input id="dniCliente" name="dniCliente" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 12345678k</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Nombre</label>
+                    <div class="col-md-4">
+                        <input id="nombreCliente" name="nombreCliente" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: Adrian</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Telefono</label>
+                    <div class="col-md-4">
+                        <input id="telefonoCliente" name="telefonoCliente" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: (9/7/6)52346100</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Email</label>
+                    <div class="col-md-4">
+                        <input id="emailCliente" name="emailCliente" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: aaa@aaa.com</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="" id="ClienteMiembro" value="miembro">
+                                Miembro
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+        <form class="form-horizontal" id="clienteM" name="clienteM">
+            <div class="form-group">
+                <label class="col-md-4 control-label">Fecha Alta</label>
+                <div class="col-md-4">
+                    <input id="fechaAltaCliente" name="fechaAltaCliente" type="text" placeholder="" class="form-control input-md">
+                    <span class="help-block">Ejemplo: 01/01/2017</span>
+                </div>
+            </div>
+        </form>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="agregar"></label>
+            <div class="col-md-8">
+                <button type="button"  id="btnAgregarCliente" name="btnAgregarCliente" class="btn btn-warning">Agregar</button>
+                <button type="button" id="cancelarCliente" name="cancelarCliente" class="btn btn-warning">Cancelar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Formulario Baja Cliente -->
+
+    <div id="formBajaCliente">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Baja Cliente</legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="ClienteABaja">Cliente</label>
+                    <div class="col-md-4">
+                        <select id="ClienteABaja" name="ClienteABaja" class="form-control"> </select>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="btnBajaCliente"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="btnBajaCliente" name="darBajaClient" class="btn btn-warning">Baja</button>
+                        <button type="button" id="cancelarBaja" name="cancelarBaja" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Formulario Modificar Cliente  -->
+
+    <div id="formModificarCliente">
+        <form class="form-horizontal" id="selectClienteModificar">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Modificar Cliente</legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="ClienteABaja">Cliente</label>
+                    <div class="col-md-4">
+                        <select id="clienteAModificar" name="clienteAModificar" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" ></label>
+                    <div class="col-md-8">
+                        <button type="button" id="darAmodificar" name="darBamodificar" class="btn btn-warning">Modificar</button>
+                        <button type="button" id="cancelarModificacion" name="cancelarModificacion" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Formulario cliente modificado -->
+
+    <div id="formClienteModificado">
+        <form class="form-horizontal" id="formClienteAModificar">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Modificar Cliente</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="dniClienteAModificar">D.N.I</label>
+                    <div class="col-md-4">
+                        <input id="dniClienteAModificar" name="dniClienteAModificar" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 30251483L</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nombreAModificar">Nombre</label>
+                    <div class="col-md-4">
+                        <input id="nombreAModificar" name="nombreAModificar" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: Adrian</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="telfAModificar">Telefono</label>
+                    <div class="col-md-4">
+                        <input id="telfAModificar" name="telfAModificar" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: (9/7/6)52302561</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="emailAModificar">Email</label>
+                    <div class="col-md-4">
+                        <input id="emailAModificar" name="emailAModificar" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: ejemplo@ejemplo.com</span>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="aceptarModificacionCliente" name="aceptarModificacionCliente" class="btn btn-warning">Modificar</button>
+                        <button type="button" id="cancelarModificacionCliente" name="cancelarModificacionCliente" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <div id="formHistorialCliente">
+        <form class="form-horizontal">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Historial Cliente</legend>
+
+                <!-- Multiple Radios (inline) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="clientes"></label>
+                    <div class="col-md-8">
+                        <label class="radio-inline" for="clientes-0">
+                            <input type="radio" name="clientes" id="todos" value="todos" checked="checked">
+                            Todos los clientes
+                        </label>
+                        <label class="radio-inline" for="clientes-1">
+                            <input type="radio" name="clientes" id="miembro" value="miembro">
+                            Clientes Miembros
+                        </label>
+                        <label class="radio-inline" for="clientes-2">
+                            <input type="radio" name="clientes" id="noMiembro" value="noMiembro">
+                            Clientes No Miembros
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+        <div id="tbTodos"></div>
+        <div id="tbMiembros"></div>
+        <div id="tbNoMiembros"></div>
+    </div>
+
+    <!--
+
+    FORMULARIOS ABOGADOS
+
+    -->
+    <!-- Formulario agregar abogado-->
+
+    <div id="formAgregarAbogado">
+        <form class="form-horizontal" id="agregarAbogado" name="abogado">
+            <fieldset>
+
+                <legend>Agregar Abogados</legend>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >D.N.I</label>
+                    <div class="col-md-4">
+                        <input id="dniAbogado" name="dniAbogado" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 12345678L</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Nombre</label>
+                    <div class="col-md-4">
+                        <input id="nombreAbogado" name="nombreAbogado" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: Francisco</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="sueldo">Sueldo</label>
+                    <div class="col-md-4">
+                        <input id="sueldo" name="sueldo" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 900,00</span>
+                    </div>
+
+
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="agregar"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="btnAñadirAbogado" name="añadirAbogado" class="btn btn-warning">Agregar</button>
+                        <button type="button" id="cancelarAbogado" name="cancelarAbogado" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Formulario Dar de baja a un abogado -->
+
+    <div id="formBajaAbogado">
+        <form class="form-horizontal" id="formDarBajaAbogado">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Baja Abogado</legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="seleccionarAbogado">Abogado</label>
+                    <div class="col-md-4">
+                        <select id="seleccionarAbogadoModif" name="seleccionarAbogado" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="darBajaAbogado"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="darBajaAbogado" name="darBajaAbogado" class="btn btn-warning">Baja</button>
+                        <button type="button" id="cancelarBajaAbogado" name="cancelarBajaAbogado" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+
+    <!-- Formulario Modificacion de sueldo del abogado-->
+
+    <div id="formModificarSueldo">
+        <form class="form-horizontal" id="formModificarSueloAbogado">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Modificar Sueldo</legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="seleccionarAbogado">Abogado</label>
+                    <div class="col-md-4">
+                        <select id="seleccionarAbogado" name="seleccionarAbogado" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="sueldoModificado">Sueldo</label>
+                    <div class="col-md-4">
+                        <input id="sueldoModificado" name="sueldoModificado" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 900,00</span>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="modificarSueldo"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="btnModificarSueldoAbogado" name="modificarSueldoAbogado" class="btn btn-warning">Modificar</button>
+                        <button type="button" id="cancelarSueldo" name="cancelarSueldo" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+    <div id="formHistorialAbogado">
+        <form class="form-horizontal" id="frmHistorialAbogados">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Historial Abogados</legend>
+
+                <!-- Multiple Radios (inline) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="listadAbogado"></label>
+                    <div class="col-md-8">
+                        <label class="radio-inline" for="listadAbogado-0">
+                            <input type="radio" name="listadAbogado" id="todosAbogados" value="todos" checked="checked">
+                            Todos los abogados
+                        </label>
+                        <label class="radio-inline" for="listadAbogado-2">
+                            <input type="radio" name="listadAbogado" id="media" value="media">
+                            Media de los salario
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+        <div id="tbAbogados"></div>
+        <div id="tbMedia"></div>
+    </div>
+    <!--
+
+    FORMULARIOS MULTA
+
+    -->
+    <div id="formMulta">
+        <form class="form-horizontal" id="agregarMulta" name="frmAgregarMulta">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Agregar Multa</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Nombre</label>
+                    <div class="col-md-4">
+                        <input id="nombreMulta" name="nombreMulta" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 000-aaa-000</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Importe</label>
+                    <div class="col-md-4">
+                        <input id="importeMulta" name="importeMulta" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 900,00</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="fecha">Fecha</label>
+                    <div class="col-md-4">
+                        <input id="fechaMulta" name="fechaMulta" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 01/01/2017</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Descripcion</label>
+                    <div class="col-md-4">
+                        <input id="descripcionMulta" name="descripcionMulta" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Longitud maxima 40 carácteres</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Algaciones</label>
+                    <div class="col-md-4">
+                        <input id="alegacionesMulta" name="alegacionesMulta" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Longitud maxima 40 carácteres</span>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="agregar"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="añadirMulta" name="añadirMulta" class="btn btn-warning">Agregar</button>
+                        <button type="button" id="cancelarMulta" name="cancelarMulta" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <!--
+
+    FORMULARIOS FACTURA
+
+    -->
+
+    <div id="formFactura">
+        <form class="form-horizontal" id="formAgregarFactura" name="agregarFactura">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Agregar Facturas</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Nombre</label>
+                    <div class="col-md-4">
+                        <input id="nombreFactura" name="nombreFactura" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: aaa-000</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >Importe</label>
+                    <div class="col-md-4">
+                        <input id="importeFactura" name="importeFactura" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 900,00</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="estados">Estados</label>
+                    <div class="col-md-4">
+                        <input id="estados" name="estados" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: estado</span>
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="fecha">Fecha</label>
+                    <div class="col-md-4">
+                        <input id="fecha" name="fecha" type="text" placeholder="" class="form-control input-md">
+                        <span class="help-block">Ejemplo: 01/01/2017</span>
+                    </div>
+                </div>
+
+                <!-- Multiple Checkboxes -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" ></label>
+                    <div class="col-md-4">
+                        <div class="checkbox">
+                            <label for="miembro-0">
+                                <input type="checkbox" name="miembro" id="miembroFactura" value="miembro">
+                                Aplicar aplicar descuento de miembro
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="agregar"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="añadirFactura" name="añadirFactura" class="btn btn-warning">Agregar</button>
+                        <button type="button" id="cancelarFactura" name="cancelarFactura" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+    </div>
+    <div id="frmHistorialFactura">
+        <form class="form-horizontal">
+        <fieldset>
+
+
+            <legend>Historial Factura</legend>
+            <div id="tbFacturas"></div>
+
+        </fieldset>
+</form>
+
+    </div>
+
+    <!--
+
+    FORMULARIOS RECLAMACIONES
+
+    -->
+    <div id="formAgregarReclamacion">
+        <form class="form-horizontal" id="formNuevaReclamacion" name="formNuevaReclamacion">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Nueva Reclamacion</legend>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nomReclamacion">Nombre</label>
+                    <div class="col-md-4">
+                        <input id="nomReclamacion" name="nomReclamacion" type="text" placeholder="" class="form-control input-md">
+                        <span  class="help-block">Ejemplo: 000-AAA</span>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="estadoReclamacion">Estado</label>
+                    <div class="col-md-4">
+                        <select id="estadoReclamacion" name="estadoReclamacion" class="form-control">
+                            <option value="borrador">Borrador</option>
+                            <option value="activa">Activa</option>
+                            <option value="terminada">Terminada</option>
+                            <option value="cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="clienteReclamacion">Cliente</label>
+                    <div class="col-md-4">
+                        <select id="clienteReclamacion" name="clienteReclamacion" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="abogadoReclamacion">Abogado</label>
+                    <div class="col-md-4">
+                        <select id="abogadoReclamacion" name="abogadoReclamacion" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="facturaReclamacion">Factura</label>
+                    <div class="col-md-4">
+                        <select id="facturaReclamacion" name="facturaReclamacion" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="multaReclamacion">Multa</label>
+                    <div class="col-md-4">
+                        <select id="multaReclamacion" name="multaReclamacion" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="añadirReclamacion"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="añadirReclamacion" name="añadirReclamacion" class="btn btn-warning">Añadir</button>
+                        <button type="button" id="cancelarReclamacion" name="cancelarReclamacion" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+<!--Formulario seleccionar Reclamacion -->
+
+    <div id="formSeleccionaReclamacion">
+        <form class="form-horizontal" id="formSelecReclamacion" name="frmSelectReclamacion">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Seguimiento de Reclamciones</legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="buscarReclamacion">Reclamacion</label>
+                    <div class="col-md-4">
+                        <select id="buscarReclamacion" name="buscarReclamacion" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="verReclamacion" name="noVerReclamacion" class="btn btn-warning">Aceptar</button>
+                        <button type="button" id="noVerReclamacion" name="noVerReclamacion" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        <div id="tbReclamacion"></div>
+        </form>
+
+    </div>
+
+    <!-- Formulario Actualizacion de Reclamacion -->
+
+    <div id="formActualizaReclamacion">
+        <form class="form-horizontal" id="formReclamacionActualiza" name="frmReclamacionActualizar">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Actualizacion de Reclamaciones</legend>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="reclamcionAmodificar">Reclamacion</label>
+                    <div class="col-md-4">
+                        <select id="reclamcionAmodificar" name="reclamcionAmodificar" class="form-control">
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="estadoModificado">Estado</label>
+                    <div class="col-md-4">
+                        <select id="estadoModificado" name="estadoModificado" class="form-control">
+                            <option value="borrador">Borrador</option>
+                            <option value="activa">Activa</option>
+                            <option value="terminada">Terminada</option>
+                            <option value="cancelada">Cancelada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-8">
+                        <button type="button" id="darModificacion" name="darModificacion" class="btn btn-warning">Modificar</button>
+                        <button type="button" id="noModificacion" name="noModificacion" class="btn btn-warning">Cancelar</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+
+
+    </div>
+
+</div>
+<script type="text/javascript" src="js/objetos.js"></script>
+<script type="text/javascript" src="js/principal.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<script type="text/javascript">
+
+/*
+    EVENTOS DEL MENU
+*/
+
+ inicio=document.getElementById('inicio');
+ inicio.addEventListener("click",mostrarInicio,false);
+
+/*
+    RECLAMACIONES
+*/
+
+ nuevaReclamacion=document.getElementById('nuevaReclamacion');
+ nuevaReclamacion.addEventListener("click",mostarNuevaReclamacion,false);
+ seguimiento=document.getElementById('seguimineto');
+ seguimiento.addEventListener("click",mostarSeguimiento,false);
+ actualizar=document.getElementById("actualizacion");
+ actualizar.addEventListener("click",mostrarActualizacionReclamacion,false);
+ document.getElementById('añadirReclamacion').addEventListener("click",agregarReclamacion);
+ document.getElementById('cancelarReclamacion').addEventListener("click",resetearCampoNuevaReclamacion);
+ document.getElementById('noVerReclamacion').addEventListener("click",resetearSelectReclamacion);
+ document.getElementById('noModificacion').addEventListener("click",resetearSelectModificacionReclamacion);
+ document.getElementById('verReclamacion').addEventListener("click",mostrarTablaReclamacion);
+document.querySelector("#darModificacion").addEventListener("click",actualizarReclamacion);
+
+/*
+    CLIENTE
+*/
+
+ nuevoCliente=document.getElementById('nuevoCliente').addEventListener('click',mostrarNuevoCliente);
+ document.getElementById('darAmodificar').addEventListener('click',mostrarFormModificarCliente);
+ mnuBajaCliente=document.getElementById("bajaCliente");
+ mnuBajaCliente.addEventListener("click",mostrarBajaCliente,false);
+ modificarCliente=document.getElementById('modificaCliente');
+ modificarCliente.addEventListener("click",mostrarModificarCliente,false);
+ historialCliente=document.getElementById('historialCliente');
+ historialCliente.addEventListener("click",mostrarHistorialCliente,false);
+ document.getElementById('ClienteMiembro').addEventListener("click",habilitarCampo);
+
+function habilitarCampo(){
+    if (document.getElementById('ClienteMiembro').checked){
+        console.log(document.getElementById('ClienteMiembro').checked);
+        document.getElementById('clienteM').style.display="block";
+
+    }else{
+        document.getElementById('clienteM').style.display="none";
+    }
+}
+
+document.getElementById('btnAgregarCliente').addEventListener("click",agregarCliente);
+document.getElementById('btnBajaCliente').addEventListener("click",bajaCliente);
+
+document.getElementById('aceptarModificacionCliente').addEventListener("click",modificarClienteMod);
+
+
+document.getElementById('cancelarCliente').addEventListener("click",resetearCampoAñadirCliente);
+document.getElementById('cancelarBaja').addEventListener("click",resetearCampoBajaCliente);
+document.getElementById('cancelarModificacion').addEventListener("click",resetearCampoSeleccionarCliente);
+document.getElementById('cancelarModificacionCliente').addEventListener("click",resetearCampoClienteModficacion);
+document.querySelector('#todos').addEventListener("click",mostrarTablaCliente);
+document.querySelector('#miembro').addEventListener("click",mostrarTablaClienteMiembro);
+document.querySelector('#noMiembro').addEventListener("click",mostrarTablaClienteNoMiembro);
+
+
+/*
+    ABOGADO
+*/
+
+nuevoAbogado=document.getElementById('nuevoAbogado');
+nuevoAbogado.addEventListener("click",mostrarNuevoAbogado,false);
+bajaAbogado=document.getElementById('bajaAbogado');
+bajaAbogado.addEventListener("click",mostarBajaAbogado,false);
+modificarSueldo=document.getElementById('modificarSueldo');
+modificarSueldo.addEventListener("click",mostarModificacionSueldo,false);
+historialAbogado=document.getElementById('historialAbogado');
+historialAbogado.addEventListener("click",mostrarHistorialAbogado,false);
+document.getElementById('btnAñadirAbogado').addEventListener("click",agregarAbogado);
+document.getElementById('btnModificarSueldoAbogado').addEventListener("click",modificarSueldoAbogado);
+document.getElementById('cancelarSueldo').addEventListener("click",resetarCampoModificarSueldo);
+document.getElementById('cancelarAbogado').addEventListener("click",resetearCampoNuevoAbogado);
+document.querySelector('#darBajaAbogado').addEventListener("click",fntEliminarAbogado);
+document.querySelector('#cancelarBajaAbogado').addEventListener("click",resetearCampoBajaAbogado);
+document.querySelector("#todosAbogados").addEventListener("click",mostrarTablaAbogados);
+document.querySelector("#media").addEventListener("click",mostrarTablaMedia);
+
+/*
+    FACTURA
+*/
+
+emitirFactura=document.getElementById('emitirFactura');
+emitirFactura.addEventListener("click",mostrarEmitirFactura,false);
+historialFactura=document.getElementById('historialFactura');
+historialFactura.addEventListener("click",mostrarHistorialFactura,false);
+document.getElementById('añadirFactura').addEventListener("click",añadirFactura);
+document.getElementById('cancelarFactura').addEventListener("click",resetearCampoFacturas);
+
+
+/*
+    MULTA
+*/
+mostrarMulta=document.getElementById('mostrarMulta');
+mostrarMulta.addEventListener("click",mostrarMultas,false);
+document.getElementById('cancelarMulta').addEventListener("click",resetarCampoMultas);
+document.getElementById('añadirMulta').addEventListener("click",agregarMulta);
+</script>
+</body>
+</html>

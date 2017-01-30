@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gestion>
+    <cliente>
+        <dniCliente>30256147L</dniCliente>
+        <nombreCliente>Pedro</nombreCliente>
+        <telefonoCliente>635987412</telefonoCliente>
+        <emailCliente>pedrojf@gmail.com</emailCliente>
+    </cliente>
+    <cliente>
+        <dniCliente>35621478W</dniCliente>
+        <nombreCliente>Luisa</nombreCliente>
+        <telefonoCliente>789546321</telefonoCliente>
+        <emailCliente>luisadr@gmail.com</emailCliente>
+    </cliente>
+    <clienteMiembro>
+        <dniClienteMiembro>20153468E</dniClienteMiembro>
+        <nombreClienteMiembro>Anabel</nombreClienteMiembro>
+        <telefonoClienteMiembro>632159874</telefonoClienteMiembro>
+        <emailClienteMiembro>anabeladmin@gmail.com</emailClienteMiembro>
+        <fechaClienteMiembro>19/05/2014</fechaClienteMiembro>
+    </clienteMiembro>
+    <clienteMiembro>
+        <dniClienteMiembro>96578412Q</dniClienteMiembro>
+        <nombreClienteMiembro>Alfonso</nombreClienteMiembro>
+        <telefonoClienteMiembro>954786321</telefonoClienteMiembro>
+        <emailClienteMiembro>alfgonz@gmail.com</emailClienteMiembro>
+        <fechaClienteMiembro>01/09/2013</fechaClienteMiembro>
+    </clienteMiembro>
+    <factura>
+        <nombreFactura>mul-195</nombreFactura>
+        <fechaFactura>03/08/2016</fechaFactura>
+        <importeFactura>250,56</importeFactura>
+        <estadosFactura>pendiente</estadosFactura>
+    </factura>
+    <factura>
+        <nombreFactura>trf-096</nombreFactura>
+        <fechaFactura>30/07/2015</fechaFactura>
+        <importeFactura>100,21</importeFactura>
+        <estadosFactura>pagada</estadosFactura>
+    </factura>
+    <factura>
+        <nombreFactura>apc-100</nombreFactura>
+        <fechaFactura>05/02/2016</fechaFactura>
+        <importeFactura>50,50</importeFactura>
+        <estadosFactura>facturada</estadosFactura>
+    </factura>
+    <factura>
+        <nombreFactura>vlc-689</nombreFactura>
+        <fechaFactura>16/03/2014</fechaFactura>
+        <importeFactura>300,10</importeFactura>
+        <estadosFactura>a plazos</estadosFactura>
+    </factura>
+    <multa>
+        <nombreMulta>021-apc-001</nombreMulta>
+        <importeMulta>100,75</importeMulta>
+        <fechaMulta>02/05/2014</fechaMulta>
+        <descripcionMulta>Multa de aparcamiento en doble-fila</descripcionMulta>
+        <alegacionesMulta>Tenia los 4 intermitentes</alegacionesMulta>
+    </multa>
+    <multa>
+        <nombreMulta>150-vlc-012</nombreMulta>
+        <importeMulta>250,25</importeMulta>
+        <fechaMulta>23/04/2015</fechaMulta>
+        <descripcionMulta>Multa por velocidad superada</descripcionMulta>
+        <alegacionesMulta>La placa del limite estaba oculta</alegacionesMulta>
+    </multa>
+    <multa>
+        <nombreMulta>026-lps-031</nombreMulta>
+        <importeMulta>300,99</importeMulta>
+        <fechaMulta>05/05/2016</fechaMulta>
+        <descripcionMulta>Multa por ir contramano</descripcionMulta>
+        <alegacionesMulta>El cliente se perdio</alegacionesMulta>
+    </multa>
+    <multa>
+        <nombreMulta>639-wep-096</nombreMulta>
+        <importeMulta>250,25</importeMulta>
+        <fechaMulta>23/04/2015</fechaMulta>
+        <descripcionMulta>Multa por velocidad superada</descripcionMulta>
+        <alegacionesMulta>La placa del limite estaba oculta</alegacionesMulta>
+    </multa>
+    <multa>
+        <nombreMulta>630-jpa-089</nombreMulta>
+        <importeMulta>120,02</importeMulta>
+        <fechaMulta>15/01/2014</fechaMulta>
+        <descripcionMulta>Multa por aparcar en la acera</descripcionMulta>
+        <alegacionesMulta>El cliente iba de urgencia</alegacionesMulta>
+    </multa>
+    <abogado>
+        <dniAbogado>65482163P</dniAbogado>
+        <nombreAbogado>Barbara</nombreAbogado>
+        <sueldoAbogado>1250,21</sueldoAbogado>
+    </abogado>
+    <abogado>
+        <dniAbogado>85213647A</dniAbogado>
+        <nombreAbogado>David</nombreAbogado>
+        <sueldoAbogado>1150,59</sueldoAbogado>
+    </abogado>
+    <abogado>
+        <dniAbogado>87963524S</dniAbogado>
+        <nombreAbogado>Jose</nombreAbogado>
+        <sueldoAbogado>1300,53</sueldoAbogado>
+    </abogado>
+    <abogado>
+        <dniAbogado>30145268W</dniAbogado>
+        <nombreAbogado>Lucia</nombreAbogado>
+        <sueldoAbogado>1100,30</sueldoAbogado>
+    </abogado>
+    <reclamacion>
+        <nombreReclamacion>130-ACB</nombreReclamacion>
+        <estadoReclamacion>borrador</estadoReclamacion>
+        <clienteReclamacion>30256147L</clienteReclamacion>
+        <abogadoReclamacion>65482163P</abogadoReclamacion>
+        <facturaReclamacion>vlc-689</facturaReclamacion>
+        <multaReclamacion>630-jpa-089</multaReclamacion>
+    </reclamacion>
+    <reclamacion>
+        <nombreReclamacion>002-LPA</nombreReclamacion>
+        <estadoReclamacion>activa</estadoReclamacion>
+        <clienteReclamacion>30256147L</clienteReclamacion>
+        <abogadoReclamacion>65482163P</abogadoReclamacion>
+        <facturaReclamacion>apc-100</facturaReclamacion>
+        <multaReclamacion>150-vlc-012</multaReclamacion>
+    </reclamacion>
+    <reclamacion>
+        <nombreReclamacion>203-KOW</nombreReclamacion>
+        <estadoReclamacion>terminada</estadoReclamacion>
+        <clienteReclamacion>20153468E</clienteReclamacion>
+        <abogadoReclamacion>85213647A</abogadoReclamacion>
+        <facturaReclamacion>trf-096</facturaReclamacion>
+        <multaReclamacion>026-lps-031</multaReclamacion>
+    </reclamacion>
+    <reclamacion>
+        <nombreReclamacion>063-ASD</nombreReclamacion>
+        <estadoReclamacion>cancelada</estadoReclamacion>
+        <clienteReclamacion>96578412Q</clienteReclamacion>
+        <abogadoReclamacion>85213647A</abogadoReclamacion>
+        <facturaReclamacion>mul-195</facturaReclamacion>
+        <multaReclamacion>039-wap-096</multaReclamacion>
+    </reclamacion>
+
+
+
+</gestion>
