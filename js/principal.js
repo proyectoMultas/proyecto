@@ -635,6 +635,7 @@ function agregarReclamacion(){
         sInfo=oGestion.agregarReclamacion(oReclamacion);
         if(!sInfo){
             toastr.success("La reclamacion "+nombre+" ha sido añadida","Reclamacion añadida");
+            resetearCampoNuevaReclamacion();
         }else{
             toastr.error("la reclamacion "+nombre+" ya existe","Error");
         }
@@ -740,7 +741,8 @@ function agregarMulta(){
     if(sInfo){
         toastr.error("La multa "+nombre+ " ya esta registrada","Error");
     }else{
-        toastr.success("La multa "+ nombre + "se registro correctamente","Factura Registrada");
+        toastr.success("La multa "+ nombre + "se registro correctamente","Multa Registrada");
+        resetarCampoMultas();
     }
     console.log(validar);
 }
@@ -1535,3 +1537,4 @@ function actualizarReclamacion(){
     sInfo=oGestion.actualizarReclamacion(reclamacion,estado);
     toastr.success("La reclamacion "+reclamacion+" ha sido actualizada","Reclamacion Actulizada");
 }
+

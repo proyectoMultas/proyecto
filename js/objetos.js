@@ -451,7 +451,7 @@ Gestion.prototype.agregarReclamacion=function(oReclamacion){
             existe=true;
         }
         if(oReclamacion.factura==this.listaReclamacion[i].factura){
-            exite=true;
+            existe=true;
         }
 
     }

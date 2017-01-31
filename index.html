@@ -7,28 +7,36 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-
-
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link rel="stylesheet" href="estilo.css">
 
 
 </head>
 <body>
 <div class="container-fluid">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+             <h1>Gestión de multas</h1>
+                <h2>Adrián Cumplido Benítez</h2>
+
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse navbar" role="navigation">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li class="active" id="inicio"><a>Inicio</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
-                       Reclamacion <b class="caret"></b>
+                       Reclamación <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
 
-                        <li id="nuevaReclamacion"><a>Nueva Reclamacion</a></li>
+                        <li id="nuevaReclamacion"><a>Nueva Reclamación</a></li>
                         <li id="seguimineto"><a>Seguimiento</a></li>
-                        <li id="actualizacion"><a>Actualizacion de Reclamacion</a></li>
+                        <li id="actualizacion"><a>Actualización de Reclamación</a></li>
 
                     </ul>
                 </li>
@@ -75,7 +83,7 @@
 
     </nav>
 <div id="principal">
-    <h1>Gestion de Multas</h1>
+
     <img src="cursiGitHub.JPG" alt="">
     <img src="uml.JPG" alt="">
 </div>
@@ -632,14 +640,14 @@
             <fieldset>
 
                 <!-- Form Name -->
-                <legend>Nueva Reclamacion</legend>
+                <legend>Nueva Reclamación</legend>
 
                 <!-- Text input-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="nomReclamacion">Nombre</label>
                     <div class="col-md-4">
                         <input id="nomReclamacion" name="nomReclamacion" type="text" placeholder="" class="form-control input-md">
-                        <span  class="help-block">Ejemplo: 000-AAA</span>
+                        <span  class="help-block">Ejemplo: 000-aaa</span>
                     </div>
                 </div>
 
